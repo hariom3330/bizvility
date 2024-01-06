@@ -1,0 +1,332 @@
+{% include 'base.html' %}
+{% csrf_token %}
+{% load static %} <!-- End Navigation -->
+<div class="clearfix"></div>
+<!-- ============================================================== -->
+<!-- Top header  -->
+<!-- ============================================================== -->
+
+<!-- ============================ Search Tag & Filter Start ================================== -->
+ 
+
+					<div class="Goodup-single-drp small">
+						<div class="btn-group">
+							<!-- <button type="button" class="btn bg-dark text-light">Update</button> -->
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!-- ============================ Search Tag & Filter End ================================== -->
+
+
+<!-- ============================ Main Section Start ================================== -->
+<section class="gray py-5">
+	<div class="container">
+		<div class="row">
+
+			<!-- Item Wrap Start -->
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+				<!-- row -->
+				<div class="row justify-content-center g-2">
+
+					<div class="col-xl-12 col-lg-12 col-md-12 col-12">
+						<nav aria-label="breadcrumb">
+
+						</nav>
+						<div class="">
+							<h2 class="ft-bold">The Best Results For You</h2>
+						</div>
+					</div>
+
+					<div class="col-xl-12 col-lg-12 col-md-12 col-12">
+						<div class="d-block grouping-listings">
+							<div class="d-block grouping-listings-title">
+								<h5 class="ft-medium mb-3"></h5>
+							</div>
+
+							<!-- Single Item -->
+							
+								<div class="grouping-listings-single">
+									<div class="vrt-list-wrap">
+										{% for b in all %}
+										
+										<div class="vrt-list-wrap-head">
+											<div class="vrt-list-thumb">
+												<div class="vrt-list-thumb-figure">
+													<a href="{% url 'productdetail' b.id %}">
+													<img src="{{b.background_image.url}}"  class="img-fluid"  alt="" />
+
+												</div>
+											</a>
+												
+											</div>
+											<div class="vrt-list-content">
+												<h4 class="mb-0 ft-medium"><a href="listing-search-v1.html"
+														class="text-dark fs-md">{{b.name}}<span
+															class="verified-badge"><i
+																class="fas fa-check-circle"></i></span></a></h4>
+												<div class="Goodup-ft-first">
+													<div class="Goodup-rating">
+														<div class="Goodup-rates">
+															<i class="fas fa-star"></i>
+															<i class="fas fa-star"></i>
+															<i class="fas fa-star"></i>
+															<i class="fas fa-star"></i>
+															<i class="fas fa-star"></i>
+														</div>
+													</div>
+													<div class="Goodup-price-range">
+								
+														<div class="d-inline ms-2">
+															
+														</div>
+													</div>
+												</div>
+												<div class="vrt-list-features mt-2 mb-2">
+													<ul>
+														<li><a href="javascript:void(0);">{{b.specification1}}</a></li>
+														<li><a href="javascript:void(0);">{{b.specification2}}</a></li>
+														<li><a href="javascript:void(0);">{{b.specification3}}</a></li>
+														<li><a href="javascript:void(0);">{{b.specification4}}</a></li>
+														<li><a href="javascript:void(0);">{{b.specification5}}</a></li>
+													</ul>
+												</div>
+												<div class="vrt-list-sts">
+													<p class="vrt-qgunke"><span class="ft-bold d14ixh">Open</span>
+														{{b.open_timing }}</p>
+												</div>
+
+												<div class="vrt-list-desc">
+													<p class="vrt-qgunke">{{b.heading}}<span class="ft-bold"><a
+																href="javascript:void(0);"
+																class="d14ixh">more</a></span></p>
+												</div>
+
+												<div class="vrt-list-amenties">
+													<ul>
+														<li>
+															<div class="vrt-amens yes"><span>Pets Allow</span></div>
+														</li>
+														<li>
+															<div class="vrt-amens yes"><span>Pets Allow</span></div>
+														</li>
+														<li>
+															<div class="vrt-amens yes"><span>Delivery</span></div>
+														</li>
+														<li>
+															<div class="vrt-amens yes"><span>Pets Allow</span></div>	 	
+														</li>
+														<li>
+															<div class="vrt-amens yes"><span>Takeout</span></div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+						
+							{% endfor %}
+
+
+
+					
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<div class="list-411">
+									<div class="list-412">
+										<h4 class="ft-bold mb-0">Can't find the business?</h4>
+										<span>Adding a business to Goodup is always free.</span>
+									</div>
+									<div class="list-413">
+										<a class="btn text-light theme-bg rounded" href="#">Add business</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<h4 class="ft-bold">Frequently Asked Questions and Answers</h4>
+								<div id="accordion2" class="accordion">
+									<div class="card">
+										<div class="card-header" id="h7">
+											<h5 class="mb-0">
+												<button class="btn btn-link" data-bs-toggle="collapse"
+													data-bs-target="#ord7" aria-expanded="true" aria-controls="ord7">
+													Can I get GoodUP listing for free?
+												</button>
+											</h5>
+										</div>
+
+										<div id="ord7" class="collapse show" aria-labelledby="h7"
+											data-parent="#accordion2">
+											<div class="card-body">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+												veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+												commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+												velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+												occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+												mollit anim id est laborum.
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="h8">
+											<h5 class="mb-0">
+												<button class="btn btn-link collapsed" data-bs-toggle="collapse"
+													data-bs-target="#ord8" aria-expanded="false" aria-controls="ord8">
+													How to Permanently Delete Files From Windows?
+												</button>
+											</h5>
+										</div>
+										<div id="ord8" class="collapse" aria-labelledby="h8" data-parent="#accordion2">
+											<div class="card-body">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+												veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+												commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+												velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+												occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+												mollit anim id est laborum.
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="h9">
+											<h5 class="mb-0">
+												<button class="btn btn-link collapsed" data-bs-toggle="collapse"
+													data-bs-target="#ord9" aria-expanded="false" aria-controls="ord9">
+													Can I get GoodUP listing for free?
+												</button>
+											</h5>
+										</div>
+										<div id="ord9" class="collapse" aria-labelledby="h9" data-parent="#accordion2">
+											<div class="card-body">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+												veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+												commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+												velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+												occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+												mollit anim id est laborum.
+											</div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="h4">
+											<h5 class="mb-0">
+												<button class="btn btn-link collapsed" data-bs-toggle="collapse"
+													data-bs-target="#ord4" aria-expanded="false" aria-controls="ord4">
+													For GoodUp which lisence is better for business purpose?
+												</button>
+											</h5>
+										</div>
+
+										<div id="ord4" class="collapse" aria-labelledby="h4" data-parent="#accordion2">
+											<div class="card-body">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+												veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+												commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+												velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+												occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+												mollit anim id est laborum.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- row -->
+
+					</div>
+
+				</div>
+			</div>
+</section>
+<!-- ============================ Main Section End ================================== -->
+
+<!-- ======================= Newsletter Start ============================ -->
+<section class="space bg-cover" style="background:#03343b url(assets/img/landing-bg.png) no-repeat;">
+	<div class="container py-5">
+
+		<div class="row justify-content-center">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+				<div class="sec_title position-relative text-center mb-5">
+					<h6 class="text-light mb-0">Subscribr Now</h6>
+					<h2 class="ft-bold text-light">Get All Updates & Advance Offers</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="row align-items-center justify-content-center">
+			<div class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12">
+				<form class="bg-white rounded p-1">
+					<div class="row no-gutters">
+						<div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8">
+							<div class="form-group mb-0 position-relative">
+								<input type="text" class="form-control b-0" placeholder="Enter Your Email Address">
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
+							<div class="form-group mb-0 position-relative">
+								<button class="btn full-width btn-height theme-bg text-light fs-md"
+									type="button">Subscribe</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- ======================= Newsletter Start ============================ -->
+
+<!-- ============================ Footer Start ================================== -->
+{% include 'footer.html' %}
+<!-- ============================ Footer End ================================== -->
+
+<!-- Log In Modal -->
+{% include 'newlogin.html' %}
+<!-- End Modal -->
+
+<a id="tops-button" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="{% static '/js/jquery.min.js' %}"></script>
+<script src="{% static '/js/popper.min.js' %}"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+<script src="{% static '/js/slick.js' %}"></script>
+<script src="{% static '/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static '/js/dropzone.js' %}"></script>
+<script src="{% static '/js/counterup.js' %}"></script>
+<script src="{% static '/js/lightbox.js' %}"></script>
+<script src="{% static '/js/moment.min.js' %}"></script>
+<script src="{% static '/js/daterangepicker.js' %}"></script>
+<script src="{% static '/js/lightbox.js' %}"></script>
+<script src="{% static '/js/jQuery.style.switcher.js' %}"></script>
+<script src="{% static '/js/custom.js' %}"></script>
+<!-- ============================================================== -->
+<!-- This page plugins -->
+<!-- ============================================================== -->
+
+</body>
+
+</html>

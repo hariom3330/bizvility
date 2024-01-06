@@ -1,0 +1,394 @@
+{% include 'base.html' %}
+{% csrf_token %}
+{% load static %}
+
+
+
+
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+			
+			<!-- ======================= Home Banner ======================== -->
+			<div class="clearfix"></div>
+			<!-- ============================================================== -->
+			<!-- Top header  -->	
+			<!-- ============================================================== -->
+			
+			<!-- ======================= Home Banner ======================== -->
+			<div class="home-banner margin-bottom-0" style="background:#f4801b url(static/img/banner.jpg) no-repeat;" data-overlay="4">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="banner_caption text-center mb-5">
+								<h1 class="banner_title ft-bold mb-1">Great Workplace for Your Business</h1>
+								<p class="fs-md ft-medium">Explore wonderful place to stay, salon, shoping, massage or visit local areas.</p>
+							</div>
+							
+							<!-- <form method="get" action="{% url 'searching' %}" class="main-search-wrap fl-wrap">
+								<div class="main-search-item">
+									<input type="text" name="query" class="form-control radius" placeholder="Searching" value="{{ query }}"/>
+								</div>
+								<div class="main-search-item">
+									<input type="text" class="form-control" placeholder="Place"/>
+								</div>
+								<div class="main-search-item">
+									<select class="form-control">
+										<option value="">Choose Categories</option>
+										{% for category in categories %}
+										<option value="{{ category.id }}" {% if category.id == category_id %}selected{% endif %}>{{ category.name }}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="main-search-button">
+									<button class="btn full-width theme-bg text-white" type="button">submit<i class="fas fa-search"></i></button>
+								</div>
+							</form> -->
+							<form method="get" action="{% url 'searching' %}" >
+								
+								<input type="text" placeholder="PLEASE TYPE HERE" class="new" id="query" name="query" >
+								<div class="main-search-button">
+									
+								<!-- <button class="btn full-width theme-bg text-white"  type type="submit">Search</button> -->
+
+							</div>
+							</form>
+							<!-- <div class="search">
+								
+							</div> -->
+							
+							<div class="Goodup-bnr-cats">
+								<ul>
+									<li><a href="{% url 'flifall' pk='doctor' %}">doctor</a><li>
+									<li><a href="{% url 'flifall' pk='restaurant' %}">Restaurants</a><li>
+									<li><a href="{% url 'flifall' pk='restaurant' %}">Plumbers</a><li>
+									<li><a href="{% url 'flifall' pk='restaurant' %}">Delivery</a><li>
+									<li><a href="{% url 'flifall' pk='restaurant' %}">Coffe & Tea</a><li>
+									<li><a href="{% url 'flifall' pk='restaurant' %}">Businesses</a><li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ======================= Home Banner ======================== -->
+			
+			<!-- ======================= Listing Categories ======================== -->
+			<section class="space min gray">
+				<div class="container">
+				
+					<div class="row justify-content-center">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+							<div class="sec_title position-relative text-center mb-5">
+								<h6 class="mb-0 theme-cl">Popular Categories</h6>
+								<h2 class="ft-bold">Browse Top Categories</h2>
+							</div>
+						</div>
+					</div>
+					
+					<!-- row -->
+					<div class="row align-items-center">
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='doctor' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-stethoscope"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Doctors</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='banking' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-building"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">IT &amp; Banking</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='shoping' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-shopping-basket"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Shoppings</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='services' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-screwdriver"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Home Services</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='Life' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-basketball-ball"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Active Life</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='Life' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-utensils"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Restaurants</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='Life' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-book-open"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">institute</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='Life' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-house-damage"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Real Estate</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='Life' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-wine-glass"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Event Palnning</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='automotive' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-car-alt"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Automotive</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='design' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-pencil-ruler"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Art &amp; Design</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6">
+							<div class="cats-wrap text-center">
+								<a href="{% url 'flifall' pk='Hotel' %}" class="Goodup-catg-wrap">
+									<div class="Goodup-catg-city"></div>
+									<div class="Goodup-catg-icon"><i class="fas fa-plane"></i></div>
+									<div class="Goodup-catg-caption">
+										<h4 class="fs-md mb-0 ft-medium m-catrio">Hotel & Travel</h4>
+										<span class="text-muted"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+					</div>
+					<!-- row -->
+					
+				</div>
+			</section>
+			<!-- ======================= Listing Categories End ======================== -->
+			
+			<!-- ======================= All Types Listing ======================== -->
+			
+								<!-- /Events -->
+								
+			<!-- ======================= All Types Listing ======================== -->
+			
+			<!-- ======================= Our Partner Start ============================ -->
+		
+			<!-- ======================= Our Partner Start ============================ -->
+			
+			<!-- ======================= Blog Start ============================ -->
+		
+			<!-- ======================= Blog Start ============================ -->
+			
+			<!-- ========================== Download App Section =============================== -->
+			<section>
+				<div class="container">
+					<div class="row align-items-center justify-content-between">
+						
+						<div class="col-lg-6 col-md-12 col-sm-12 content-column">
+							<div class="content_block_2 pr-3 py-4">
+								<div class="content-box">
+									<div class="sec-title light">
+										<p class="theme-cl px-3 py-1 rounded bg-light-danger d-inline-flex">Download apps</p>
+										<h2 class="ft-bold">Download the Goodup App<br>For Easy Use</h2>
+									</div>
+									<div class="text mb-3">
+										<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+									</div>
+									<div class="position-relative row">
+										<!-- <div class="col-lg-4 col-md-4 col-4">
+											<h3 class="ft-bold theme-cl mb-0"><span class="count">10</span>k+</h3>
+											<p class="ft-medium">Active Jobs</p>
+										</div>
+										<div class="col-lg-4 col-md-4 col-4">
+											<h3 class="ft-bold theme-cl mb-0"><span class="count">12</span>k+</h3>
+											<p class="ft-medium">Resumes</p>
+										</div> -->
+										<!-- <div class="col-lg-4 col-md-4 col-4">
+											<h3 class="ft-bold theme-cl mb-0"><span class="count">07</span>k+</h3>
+											<p class="ft-medium">Employers</p>
+										</div> -->
+									</div>
+									<div class="btn-box clearfix mt-5">
+										<a href="index.html" class="download-btn play-store me-1 d-inline-flex"><img src="static/img/ios.png" width="200" alt="" /></a>
+										<a href="index.html" class="download-btn play-store ms-2 mb-1 d-inline-flex"><img src="static/img/and.png" width="200" alt="" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-lg-5 col-md-12 col-sm-12 image-column">
+							<div class="image-box">
+								<figure class="image"><img src="static/img/app.png" class="img-fluid" alt=""></figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ========================== Download App Section =============================== -->
+			
+			<!-- ======================= Newsletter Start ============================ -->
+			<section class="space bg-cover" style="background:#03343b url(assets/img/landing-bg.png) no-repeat;">
+				<div class="container py-5">
+					
+					<div class="row justify-content-center">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+							<div class="sec_title position-relative text-center mb-5">
+								<h6 class="text-light mb-0">Subscribr Now</h6>
+								<h2 class="ft-bold text-light">Get All Updates & Advance Offers</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row align-items-center justify-content-center">
+						<div class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12">
+							<form class="bg-white rounded p-1">
+								<div class="row no-gutters">
+									<div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8">
+										<div class="form-group mb-0 position-relative">
+											<input type="text" class="form-control b-0" placeholder="Enter Your Email Address">
+										
+										</div>
+									
+									</div>
+									<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
+										<div class="form-group mb-0 position-relative">
+											<button class="btn full-width btn-height theme-bg text-light fs-md" type="button">Subscribe</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<!-- ======================= Newsletter Start ============================ -->
+				
+			<!-- ============================ Footer Start ================================== -->
+			{% include 'footer.html' %}
+			<!-- ============================ Footer End ================================== -->
+			
+			<!-- Log In Modal -->
+			{% include 'newlogin.html' %}
+			<!-- End Modal -->
+			
+			<a id="tops-button" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static '/js/jquery.min.js' %}"></script>
+		<script src="{% static '/js/popper.min.js' %}"></script>
+		<script src="{% static '/js/bootstrap.min.js' %}"></script>
+		<script src="{% static '/js/slick.js' %}"></script>
+		<script src="{% static '/js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static '/js/dropzone.js' %}"></script>
+		<script src="{% static '/js/counterup.js' %}"></script>
+		<script src="{% static '/js/lightbox.js' %}"></script>
+		<script src="{% static '/js/moment.min.js' %}"></script>
+		<script src="{% static '/js/daterangepicker.js' %}"></script>
+		<script src="{% static '/js/lightbox.js' %}"></script>		
+		<script src="{% static '/js/jQuery.style.switcher.js' %}"></script>
+		<script src="{% static '/js/custom.js' %}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->			
+
+	</body>
+</html>

@@ -1,0 +1,388 @@
+{% extends 'base.html' %}
+
+<!-- Template Stylesheet -->
+
+{% load static %}
+{% block title%}
+Listing
+{%endblock%}
+
+{% block nav %}
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div class="nav_list">
+          <a href="#" class="nav_link active">
+            <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">We are hiring</span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class='bx bx-shopping-bag nav_icon'></i> <span class="nav_name">Shopping</span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class='bx bx-add-to-queue nav_icon'></i> <span class="nav_name">Post Business</span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class='bx bx-message nav_icon'></i> <span class="nav_name">Message</span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class='bx bx-list-check nav_icon'></i> <span class="nav_name">Free Listing</span>
+          </a>
+          <a href="#" class="nav_link">
+            <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Popular Categories</span>
+          </a>
+        </div>
+        <a href="#" class="nav_link">
+          <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span>
+        </a>
+      </nav>
+</div>
+{% endblock  %}
+{% block content %}
+
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container my-5 py-5">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="display-3 text-white animated slideInLeft">{{listing.name}}</h1>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">{{listing.specification}}</p>
+                            <a href="{{listing.website}}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A appointment</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                            <img class="img-fluid" src="img/" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            
+    
+
+
+   <!-- Service Start -->
+   <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4 " >
+                        <i class="fa fa-3x fa-user-tie text-primary mb-4"style=" display:flex;justify-content:center"></i>
+                        <h5 style="text-align:center">{{listing.specification1}}</h5>
+                        <p>{{listing.about}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-utensils text-primary mb-4" style=" display:flex;justify-content:center"></i>
+                        <h5 style="text-align:center" >{{listing.specification2}}</h5>
+                        <p>{{listing.about}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-cart-plus text-primary mb-4" style=" display:flex;justify-content:center"></i>
+                        <h5 style="text-align:center">{{listing.specification3}}</h5>
+                        <p>{{listing.about}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item rounded pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-headset text-primary mb-4" style=" display:flex;justify-content:center"></i>
+                        <h5 style="text-align:center">{{listing.specification4}}</h5>
+                        <p>{{listing.about}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6 text-start">
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{listing.gallery_img1.url}}"style="width: 100%!important;
+                        height: 255px;">
+                    </div>
+                    <div class="col-6 text-start">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="{{listing.gallery_img2.url}}" style="height: 255px;
+                        width: 100%!important;">
+                    </div>
+                    <div class="col-6 text-end">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="{{listing.gallery_img3.url}}"style="width: 100%!important;
+                        height: 254px;">
+                    </div>
+                    <div class="col-6 text-end">
+                        
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="{{listing.gallery_img4.url}}"style=" width: 100%!important;
+                        height: 255px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
+                <h1 class="mb-4">Welcome to <i>{{listing.specification}}</h1>
+                <p class="mb-4">{{listing.about}}</p>
+                <p class="mb-4"></p>
+                <div class="row g-4 mb-4">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">15</h1>
+                            <div class="ps-4">
+                                <p class="mb-0">Years of</p>
+                                <h6 class="text-uppercase mb-0">Experience</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">500</h1>
+                            <div class="ps-4">
+                                <p class="mb-0">Plus</p>
+                                <h6 class="text-uppercase mb-0">Custumer</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Menu Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="section-title ff-secondary text-center text-primary fw-normal">Specification</h5>
+            <h1 class="mb-5">Expertise</h1>
+        </div>
+     
+    </div>
+</div>
+<!-- Menu End -->
+
+
+<!-- Reservation Start -->
+<div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="row g-0" style="width:100%">
+        <div class="col-md-6">
+            <div class="video">
+                 
+                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" width="400" height="300s" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+               
+                    <span></span>   
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 bg-dark d-flex align-items-center">
+            <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+      
+                <h1 class="text-white mb-4">Enquery Here</h1>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating date" id="date3" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                <label for="datetime">Date & Time</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <label for="email">Phone</label>
+                              </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                <label for="message">Special Request</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                        allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Reservation Start -->
+
+<section class="contact-section section-padding section-bg" id="section_5">
+    <div class="container">
+        <div class="row">
+
+            <div  class="col-lg-12 col-12 text-center" style="font-family: 'Pacifico', cursive; color:#007bff!important;">
+                <h2 class="mb-5">Get in touch</h2>
+            </div>
+
+            <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.065641062665!2d-122.4230416990949!3d37.80335401520422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858127459fabad%3A0x808ba520e5e9edb7!2sFrancisco%20Park!5e1!3m2!1sen!2sth!4v1684340239744!5m2!1sen!2sth" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
+                <h4 class="mb-3">Address</h4>
+
+                <p>{{listing.address}}</p>
+
+                <hr>
+
+                <p class="d-flex align-items-center mb-1">
+                    <span class="me-2">Phone</span>
+
+                    <a href="tel: 305-240-9671" class="site-footer-link">
+                        {{listing.phone}}
+                    </a>
+                </p>
+
+                <p class="d-flex align-items-center">
+                    <span class="me-2">Email</span>
+
+                    <a href="mailto:info@company.com" class="site-footer-link">
+                        {{listing.website}}
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 mx-auto">
+                <h4 class="mb-3">Address</h4>
+
+                <p>{{listing.address}}</p>
+
+                <hr>
+
+                <p class="d-flex align-items-center mb-1">
+                    <span class="me-2">Phone</span>
+
+                    <a href="tel: 110-220-3400" class="site-footer-link">
+                        {{listing.phone}}
+                    </a>
+                </p>
+
+                <p class="d-flex align-items-center">
+                    <span class="me-2">Email</span>
+
+                    <a href="mailto:info@company.com" class="site-footer-link">
+                        {{listing.website}}
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+</main>
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-14398">
+    <div class="container">
+    <div class="row mb-5">
+    <div class="col-md-3">
+    <a href="main.html" class="footer-site-logo">Acculizein Tech</a>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit officiis corporis optio natus. </p>
+    </div>
+    <div class="col-md-2 ml-auto">
+    <h3>Home</h3>
+    <ul class="list-unstyled links">
+    <li><a href="#"> Dream Company</a></li>
+    <li><a href="#">Featured Job</a></li>
+    <li><a href="#">Top Companies</a></li>
+    <li><a href="#">Easy-Apply</a></li>
+  
+    </ul>
+    </div>
+    <div class="col-md-2 ml-auto">
+    <h3>Jobs</h3>
+    <ul class="list-unstyled links">
+    <li><a href="#">Search</a></li>
+    <li><a href="#">Filters</a></li>
+    <li><a href="#">Job-Post</a></li>
+    <li><a href="#">Dreamwork</a></li>
+    
+    </ul>
+    </div>
+    <div class="col-md-2 ml-auto">
+      <h3>Hiring</h3>
+      <h3>Login</h3>
+      <h3>Save Post</h3>
+      <i class=" bi bi-facebook"></i>
+      <i class=" bi bi-telephone-fill"></i>
+      <i class=" bi bi-instagram"></i>
+      
+    </ul>
+    </div>
+    </div>
+    <div class="row mb-4">
+    <div class="col-12 pb-4">
+    <div class="line"></div>
+    </div>
+    <div class="col-md-6 text-md-left" >
+    <ul class="list-unstyled link-menu nav-left">
+    <li><a href="#" style="color: white;">Privacy Policy</a></li>
+    <li><a href="#" style="color: white;">Terms &amp; Conditions</a></li>
+    
+    </ul>
+    </div>
+    <div class="col-md-6 text-md-right">
+    <ul class="list-unstyled social nav-right">
+    <li><a href="#"><span class="icon-twitter"></span></a></li>
+    <li><a href="#"><span class="icon-instagram"></span></a></li>
+    <li><a href="#"><span class="icon-facebook"></span></a></li>
+    <li><a href="#"><span class="icon-pinterest"></span></a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </footer>
+
+
+{% endblock %}
