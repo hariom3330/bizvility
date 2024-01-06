@@ -24,9 +24,7 @@ SECRET_KEY = 'django-insecure-ugg0*w%j40)18ia7%!w_w*i@purglc-xg$wa1djcm!a@2mxbcm
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
-
-ALLOWED_HOSTS = ['bizvility.com','www.bizvility.com']
-
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -39,14 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'social_django',
-    "phonenumber_field",
+    
     'phone_field',
+    'phonenumber_field',
     'embed_video',
     'crispy_forms'
 ]
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,9 +83,9 @@ WSGI_APPLICATION = 'bizvility.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'searchsp_bizvility',
-        'USER':'searchsp_bizvility_user',
-        'PASSWORD':'EQOU]&GmWWAJ',
+        'NAME': 'bzn',
+        'USER':'root',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT': '3306',
     }
@@ -133,11 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+MEDIA_URL = '/media/'
 
 
 
@@ -174,12 +169,11 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = [
 
 
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'team@bizvility.com'
-EMAIL_HOST_PASSWORD = 'HARIom@2002'
+EMAIL_HOST_USER = 'hariomparmar330@gmail.com'
+EMAIL_HOST_PASSWORD = 'bfqjzxxfihzzvcfx'

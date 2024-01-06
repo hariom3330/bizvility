@@ -133,6 +133,13 @@
 									</div>
 
 								</div>
+								<p>Recommended Products:</p>
+								<ul>
+								  {% for recommended_product in recommendations.b.name %}
+									<li>{{ recommended_product}}</li>
+								  {% endfor %}
+								</ul>
+							  </div>
 						
 							{% endfor %}
 
@@ -146,7 +153,7 @@
 										<span>Adding a business to Goodup is always free.</span>
 									</div>
 									<div class="list-413">
-										<a class="btn text-light theme-bg rounded" href="#">Add business</a>
+										<a class="btn text-light theme-bg rounded" href="{% url 'form' %}">Add business</a>
 									</div>
 								</div>
 							</div>

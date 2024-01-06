@@ -9,10 +9,9 @@ from embed_video.admin import AdminVideoMixin
    
 
 
-# class listingadmin(AdminVideoMixin,admin.ModelAdmin):
-#     list_display = ('id','category','name','phone','website','specification','heading','about','youtub','address','open_timing','address_image','background_image','gallery_img1','gallery_img2','gallery_img3','gallery_img4','gallery_img5')
-# admin.site.register(listing,listingadmin)
-admin.site.register(listing)
+class listingadmin(AdminVideoMixin,admin.ModelAdmin):
+    list_display = ('id','category','name','phone','website','specification','heading','about','youtub','address','open_timing','address_image','background_image','gallery_img1','gallery_img2','gallery_img3','gallery_img4','gallery_img5')
+admin.site.register(listing,listingadmin)
 
 
  
@@ -30,7 +29,7 @@ admin.site.register(Phone,Phoneadmin)
 
 
 class Reviewadmin(admin.ModelAdmin):
-    list_display = ('id','user','namee','exprince','emaill','review')
+    list_display = ('id','user','name','comment','rating','created_at','listings')
 admin.site.register(Review,Reviewadmin)  
 
 

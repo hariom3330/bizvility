@@ -47,7 +47,7 @@ class Phone(models.Model):
 class listing(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
-    phone = PhoneField(blank=True)
+    phone = models.CharField(max_length =10, blank =True)
     website = models.URLField(max_length=200)
     specification = models.CharField(max_length=250)
     heading = models.TextField()
@@ -85,12 +85,13 @@ class Enquire(models.Model):
 
 
 class Review(models.Model):
-    # product = models.ForeignKey(listing, on_delete=models.CASCADE)
+    listings = models.ForeignKey( listing, on_delete=models.CASCADE)
+    name =  models.CharField(max_length=250)
     user =  models.ForeignKey(User,models.CASCADE)
-    namee = models.CharField(max_length=250)
-    review =models.CharField(max_length=250)
-    emaill = models.EmailField(unique=True)
-    exprince = models.TextField()
+    email  = models.EmailField()
+    rating = models.IntegerField(choices=[(i, str(i)) for i in range(1, 5)])
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.id) 

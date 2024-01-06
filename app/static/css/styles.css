@@ -180,6 +180,7 @@ p {
 .full-width{
 	width:100%;
 }
+
 p, ul, ol, dl, dt, dd, blockquote, address {
     margin: 0 0 10px;
 }
@@ -353,6 +354,12 @@ ul.list-style li:before {
 ul.list-style.style-2 li:before {
     content: "\e628" !important;
     color:#525252;
+}
+.word{
+    width: 200px;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
 }
 ul.icons_lists{
 	padding:0;

@@ -7,10 +7,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     path('social-auth/',include('social_django.urls',namespace='social-auth'))
-    
-] 
-if settings.DEBUG:
-    
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 
+
+
+# serve  static file
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+      # serve media file
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

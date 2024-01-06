@@ -6,6 +6,8 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+
+
 import random
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
@@ -32,7 +34,10 @@ urlpatterns = [
     # path('edit/', views.edit, name='edit'),
   
     # path('<int:product_id>/review/', views.review, name='review'),s
-    path('review/',views.review,name='review'),
+    path('listing/<int:pk>/review/', views.review, name='review'),
+    path('listing/<int:pk>/review/<int:review_id>/delete/', views.delete_review, name='delete_review'),
+   
+    
     path('fl/<str:pk>',views.fl,name='flifall'),
     path('form',views.form,name='form'),
     # path('searching/', views.searchingView.as_view(), name="searching"),

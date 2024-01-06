@@ -3,6 +3,8 @@ from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render
 from django.contrib import messages 
 from django.contrib.auth.models import User 
+from django.http import JsonResponse
+
 import random
 from .models import *
 from django.shortcuts import render, redirect
@@ -15,6 +17,7 @@ from django.core.validators import validate_email
 from .models import listing,Enquire,Review,Profile
 from .models import  Category
 from phone_field import PhoneField
+from .recommendation_engine import generate_recommendations
 from django.views import View
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User, auth
@@ -234,7 +237,10 @@ class ProductDetailView(View):
     def get(self,request,pk):
         listings = listing.objects.get(id=pk)
         print(listings)
-        return render(request, 'listing.html', {'listing':listings})    
+        reviews = Review.objects.filter(listings=listings)
+ 
+
+        return render(request, 'listing.html', {'listing':listings,'reviews': reviews})    
 
 def form(request):
 
@@ -296,19 +302,46 @@ def form(request):
 
    
       
-def review(request):
+def review(request,pk):
+  
     if request.method == 'POST':
-        namee = request.POST['namee']
-        # Listing = listing.objects.get(id=id)
-        emaill = request.POST['emaill']
-        exprince = request.POST['exprince']
-        review = request.POST['review']
         user = request.user
-        enquery = Review.objects.create( user=user,namee=namee,emaill=emaill,exprince=exprince,review=review)
+        name = request.POST['name']
+        # Listing = listing.objects.get(id=id)
+        rating= request.POST.get('rating')
+        email= request.POST['email']
+        comment= request.POST['comment']
+        listings = listing.objects.get(pk=pk )
+        
+         
+        enquery = Review.objects.create(listings=listings, user=user,name=name,rating=rating,comment=comment,email=email)
         enquery.save()
-        return render(request, 'detail.html')
-
+        
+        # If it's an AJAX request, return a JsonResponse
+        return redirect('/')  
     return render(request, 'home.html')
+
+def delete_review(request, pk, review_id):
+    # Assuming 'pk' is the listing ID, and 'review_id' is the review ID
+    review = get_object_or_404(Review, review_id)
+
+    # Check if the user has permission to delete the review (you can customize this part)
+    # For example, you might want to check if the user is the author of the review
+    if request.user == review.user:
+        review.delete()
+
+        # You might want to add a success message or handle the deletion in a different way
+        # messages.success(request, 'Review deleted successfully')
+
+    # Redirect to the listing detail page or any other page as needed
+    return redirect('listing_detail', pk=pk)
+
+
+    
+
+
+
+
     
 def logout(request):
 	auth_logout(request)

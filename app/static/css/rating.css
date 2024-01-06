@@ -1,0 +1,27 @@
+/* star-rating.css */
+
+.star-rating {
+    display: inline-block;
+    font-size: 1.5em;
+    unicode-bidi: bidi-override;
+    color: #ddd;
+    position: relative;
+}
+
+.star-rating::before {
+    content: '★★★★★';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f39c12;
+    overflow: hidden;
+}
+
+.star-rating[data-rating]::before {
+    content: '★★★★★';
+    color: #f39c12;
+    width: calc(1.2em * var(--rating, 0));
+    overflow: hidden;
+}
+
+
